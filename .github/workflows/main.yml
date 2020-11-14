@@ -33,6 +33,9 @@ jobs:
           push: true
           tags: aspel/osxcross:t1
           platforms: linux/amd64
+          build-args: |
+            XCODE_USERNAME="${{ secrets.XCODE_USERNAME }}"
+            XCODE_PASSWORD="${{ secrets.XCODE_PASSWORD }}"
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
