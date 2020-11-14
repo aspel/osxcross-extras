@@ -95,6 +95,7 @@ else
 fi
 
 pushd "${SDK_LOCATION}"
+ls -la
 SDKS=$(ls | grep "^MacOSX10.*" | grep -v "Patch")
 popd
 
