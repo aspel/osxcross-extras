@@ -8,6 +8,7 @@ RUN apt-get install -y build-essential wget python2.7 python3 \
  cpio xz-utils patch pixz sudo libxml2-dev libssl-dev \
  zlib1g-dev liblzma-dev libbz2-dev \
  software-properties-common
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 RUN apt-add-repository 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
 RUN apt-get update
 RUN apt-get install -y clang-11 llvm-11
@@ -20,6 +21,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 RUN apt-get full-upgrade -y
 RUN apt-get install -y build-essential cmake wget git p7zip-full ccache ninja-build software-properties-common
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 RUN apt-add-repository 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
 RUN apt-get update
 RUN apt-get install -y clang-11 llvm-11
