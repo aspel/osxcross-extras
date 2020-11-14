@@ -9,7 +9,6 @@ if [ -f .cred ]; then
   source ./.cred
   rm -f ./.cred
 fi
-echo "Use this account for downloading: ${XCODE_USERNAME}"
 chmod a+x create_osxcross_toolchain.sh
 export OC_SYSROOT='/opt/osxcross'
 export XCODE_VER='12.2'
