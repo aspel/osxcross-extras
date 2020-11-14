@@ -10,9 +10,9 @@ fi
 echo "Use this account for downloading: ${XCODE_USERNAME}"
 chmod a+x create_osxcross_toolchain.sh
 export OC_SYSROOT='/opt/osxcross'
-export XCODE_VER='11.5'
+export XCODE_VER='12.2'
 export SLIENT_RUNNING='1'
-export TARGET_MAC_VER='10.14'
+export TARGET_MAC_VER='11.0'
 ./create_osxcross_toolchain.sh
 bash ./osxcross/install_rt.sh
 
