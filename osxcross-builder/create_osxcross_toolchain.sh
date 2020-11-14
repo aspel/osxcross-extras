@@ -50,10 +50,10 @@ fi
 git clone --depth=50 https://github.com/tpoechtrager/osxcross/
 cd osxcross
 
-for i in ../*.patch; do
-    echo "Applying $(basename "${i}")..."
-    patch -Np1 -i "${i}"
-done
+#for i in ../*.patch; do
+#    echo "Applying $(basename "${i}")..."
+#    patch -Np1 -i "${i}"
+#done
 
 mv ../MacOSX10.*.sdk.tar.* ./tarballs/
 
