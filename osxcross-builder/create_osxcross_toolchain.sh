@@ -57,7 +57,7 @@ cd osxcross
 #    patch -Np1 -i "${i}"
 #done
 
-mv ../MacOSX10.*.sdk.tar.* ./tarballs/
+mv ../MacOSX11.*.sdk.tar.* ./tarballs/
 
 if [[ "x${OC_SYSROOT}" == 'x' ]]; then
   OC_SYSROOT="$(readlink -f ./target)"
