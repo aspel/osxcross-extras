@@ -49,7 +49,7 @@ cd osxcross
 
 for i in ../*.patch; do
     echo "Applying $(basename "${i}")..."
-    patch -Np1 -i "${i}"
+    patch --verbose --ignore-whitespace --fuzz 3 -Np1 -i "${i}"
 done
 
 mv ../MacOSX11.*.sdk.tar.* ./tarballs/
