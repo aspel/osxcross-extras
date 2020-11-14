@@ -12,7 +12,7 @@ chmod a+x create_osxcross_toolchain.sh
 export OC_SYSROOT='/opt/osxcross'
 export XCODE_VER='12.2'
 export SLIENT_RUNNING='1'
-export TARGET_MAC_VER='10.16'
+export TARGET_MAC_VER='10.15'
 ./create_osxcross_toolchain.sh
 bash ./osxcross/install_rt.sh
 
