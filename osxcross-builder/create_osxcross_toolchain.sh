@@ -34,11 +34,6 @@ fi
 
 guess_targets "${XCODE_VER}"
 
-#echo 'Locating Xcode package...'
-#python3 fetch-xcode.py
-
-#echo "Downloading Xcode image file..."
-#bash download_xcode$XCODE_VER.sh >> "${STDOUT}" 2>&1
 wget -q https://fex.cc/HBWuSPpYAYnuMF5wB -O Command_Line_Tools_for_Xcode_12.2.dmg
 
 echo 'Making SDK tarball...'
