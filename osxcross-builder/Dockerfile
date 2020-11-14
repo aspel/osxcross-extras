@@ -8,10 +8,6 @@ RUN apt-get install -y build-essential clang wget python2.7 python3 \
  cpio xz-utils patch pixz llvm sudo libxml2-dev libssl-dev \
  zlib1g-dev liblzma-dev libbz2-dev
 COPY * /tmp/
-ARG XCODE_USERNAME
-ARG XCODE_PASSWORD
-ENV XCODE_PASSWORD=$XCODE_PASSWORD
-ENV XCODE_USERNAME=$XCODE_USERNAME
 RUN /tmp/ci.sh
 
 # second stage
