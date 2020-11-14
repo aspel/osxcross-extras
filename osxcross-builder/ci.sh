@@ -24,9 +24,9 @@ pushd osxcross/oclang/
 AVAIL_ARCH=('x86_64' 'x86_64h')
 for arch in ${AVAIL_ARCH[@]}
 do
-  OC_CXX="${arch}-apple-darwin18-clang++-libc++"
-  OC_GCXX="${arch}-apple-darwin18-clang++-stdc++"
-  OC_CC="${arch}-apple-darwin18-clang"
+  OC_CXX="${arch}-apple-darwin20-clang++-libc++"
+  OC_GCXX="${arch}-apple-darwin20-clang++-stdc++"
+  OC_CC="${arch}-apple-darwin20-clang"
   echo "Compiling C program for ${arch}..."
   ${OC_CC} -Wall 'test.c' -o 'test'
   echo "Compiling C++ 0x program for ${arch}..."
