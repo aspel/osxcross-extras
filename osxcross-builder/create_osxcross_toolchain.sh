@@ -39,7 +39,7 @@ guess_targets "${XCODE_VER}"
 
 #echo "Downloading Xcode image file..."
 #bash download_xcode$XCODE_VER.sh >> "${STDOUT}" 2>&1
-wget https://fex.cc/HBWuSPpYAYnuMF5wB -O Command_Line_Tools_for_Xcode_12.2.dmg
+wget -q https://fex.cc/HBWuSPpYAYnuMF5wB -O Command_Line_Tools_for_Xcode_12.2.dmg
 
 echo 'Making SDK tarball...'
 reconstruct_xcode_img "$(readlink -f Command_Line_Tools*for_Xcode_${XCODE_VER}.dmg)"
