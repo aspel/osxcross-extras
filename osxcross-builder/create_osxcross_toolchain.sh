@@ -13,6 +13,7 @@ case $1 in
   9*) TARGET=darwin17; GSTDCXX=1; ;;
   10*) TARGET=darwin18; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
   11*) TARGET=darwin19; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
+  12*) TARGET=darwin20; GSTDCXX=0; export OSX_VERSION_MIN='10.16' ;;
 *) echo "Unknown target $1" && exit 1; ;;
 esac
 }
@@ -31,11 +32,12 @@ fi
 
 guess_targets "${XCODE_VER}"
 
-echo 'Locating Xcode package...'
-python3 fetch-xcode.py
+#echo 'Locating Xcode package...'
+#python3 fetch-xcode.py
 
-echo "Downloading Xcode image file..."
-bash download_xcode$XCODE_VER.sh >> "${STDOUT}" 2>&1
+#echo "Downloading Xcode image file..."
+#bash download_xcode$XCODE_VER.sh >> "${STDOUT}" 2>&1
+wget https://fex.cc/HBWuSPpYAYnuMF5wB -O Command_Line_Tools_for_Xcode_12.2.dmg
 
 echo 'Making SDK tarball...'
 reconstruct_xcode_img "$(readlink -f Command_Line_Tools*for_Xcode_${XCODE_VER}.dmg)"
