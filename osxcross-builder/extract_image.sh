@@ -96,7 +96,7 @@ fi
 
 pushd "${SDK_LOCATION}"
 ls -la
-SDKS=$(ls | grep "^MacOSX10.*" | grep -v "Patch")
+SDKS=$(ls | grep "^MacOSX11.*" | grep -v "Patch")
 popd
 
 for i in $SDKS
