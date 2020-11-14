@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+set -x 
+
 cd -- "$(dirname $0)"
 pip3 install -r requirements.txt
 if [ -f .cred ]; then
