@@ -4,7 +4,7 @@ if [[ "x${TARGET_MAC_VER}" == 'x' ]]; then
 	export TARGET_MAC_VER='10.13'
 fi
 
-USEFUL_SUBPKG_10=('CLTools_Executables.pkg' "CLTools_macOSNMOS_SDK.pkg")
+USEFUL_SUBPKG_10=('CLTools_Executables.pkg' "CLTools_macOSLMOS_SDK.pkg")
 #USEFUL_SUBPKG_11=("CLTools_macOS${TARGET_MAC_VER/./}_SDK.pkg" 'CLTools_Executables.pkg')
 
 function make_sdk_tbl() {
