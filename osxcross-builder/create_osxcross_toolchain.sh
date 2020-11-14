@@ -13,7 +13,7 @@ case $1 in
   9*) TARGET=darwin17; GSTDCXX=1; ;;
   10*) TARGET=darwin18; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
   11*) TARGET=darwin19; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
-  12*) TARGET=darwin20; GSTDCXX=0; export OSX_VERSION_MIN='10.16' ;;
+  12*) TARGET=darwin20; GSTDCXX=0; export OSX_VERSION_MIN='10.15' ;;
 *) echo "Unknown target $1" && exit 1; ;;
 esac
 }
