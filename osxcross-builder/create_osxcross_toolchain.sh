@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+set -x
+
 # $1: file name
 function reconstruct_xcode_img() {
   source ./extract_image.sh
@@ -13,7 +15,7 @@ case $1 in
   9*) TARGET=darwin17; GSTDCXX=1; ;;
   10*) TARGET=darwin18; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
   11*) TARGET=darwin19; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
-  12*) TARGET=darwin20; GSTDCXX=0; export OSX_VERSION_MIN='10.15' ;;
+  12*) TARGET=darwin20; GSTDCXX=0; export OSX_VERSION_MIN='10.9' ;;
 *) echo "Unknown target $1" && exit 1; ;;
 esac
 }
@@ -66,7 +68,7 @@ echo "Toolchain will be installed to ${OC_SYSROOT}"
 export TARGET_DIR="${OC_SYSROOT}"
 export OSXCROSS_OSX_VERSION_MIN="${OSX_VERSION_MIN}"
 echo 'Building base toolchain...'
-if ! UNATTENDED=1 ./build.sh >> "${STDOUT}"; then
+if ! UNATTENDED=1 ./build.sh; then
   echo "Build failed."
   exit 1
 fi
@@ -74,7 +76,7 @@ fi
 echo "Building extra tools..."
 
 echo 'Building LLVM dsymutil...'
-./build_llvm_dsymutil.sh >> "${STDOUT}"
+./build_llvm_dsymutil.sh
 
 if [[ "x${XCODE_NORT}" != 'x' ]]; then
   echo "Skipped building compiler runtime."
@@ -87,7 +89,7 @@ if [[ "${STDOUT}" == '/dev/stdout' ]]; then
   ./build_compiler_rt.sh | tee "${RT_BUILD_LOG}"
 else
   ./build_compiler_rt.sh > "${RT_BUILD_LOG}"
-  cat "${RT_BUILD_LOG}" >> "${STDOUT}"
+  cat "${RT_BUILD_LOG}"
 fi
 
 echo "Done. Your toolchain is built at ${OC_SYSROOT}"
